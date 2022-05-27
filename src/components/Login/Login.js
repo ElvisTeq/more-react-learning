@@ -11,11 +11,25 @@ const Login = (props) => {
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
 
-  // Triggers every time [enteredEmail, enteredPassword] is run. (turns button on/off)
+  // ****************************************************************
+  // #3 Using the useEffect() Cleanup Function
+  // - To reduce HTTP request sent
+
+  // Triggers in 0.5 seconds after activating [enteredEmail, enteredPassword]
   useEffect(() => {
-    setFormIsValid(
-      enteredEmail.includes("@") && enteredPassword.trim().length > 6
-    );
+    const identifier = setTimeout(() => {
+      console.log("Ckecking");
+      setFormIsValid(
+        enteredEmail.includes("@") && enteredPassword.trim().length > 6
+      );
+    }, 500);
+
+    // Triggers every time [enteredEmail, enteredPassword] is called
+    // Will clear the timer until we stop typing for 0.5 secs (so the identifier will run only once)
+    return () => {
+      console.log("Cleanup");
+      clearTimeout(identifier);
+    };
   }, [enteredEmail, enteredPassword]);
 
   const emailChangeHandler = (event) => {
