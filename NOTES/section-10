@@ -16,3 +16,8 @@ keyValue => A string containing the value you want to give the key you are creat
 ------------------------------------- localStorage.removeItem('keyName')
 
 /////////////////////////////////////////////////////////////////////////////////////////////
+
+#2
+useEffect & Dependencies
+
+- Implemented in => "Login.js"
