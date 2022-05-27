@@ -95,3 +95,15 @@ keyValue => A string containing the value you want to give the key you are creat
   Consuming data/value passes to "provider" (All JSX need to be wrapped inside the function)
   "ctx" => contains all data passed in the "provider". Ex => (ctx.Data)
   Implemented in => "Navigation.js"
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+## 6
+
+## Alternative way to Consume Context (<anyName.Consumer>)
+
+-------------------------------------------- import { useContext } from 'react'
+
+-------------------------------------------- const ctx = useContext(ContextFunction)
+"ctx" => Contains all data
+Implemented in => "Navigation.js"
