@@ -74,3 +74,24 @@ keyValue => A string containing the value you want to give the key you are creat
 
   5). "Reducer Funtion" also have access to previous data before was changes (stored in the "state" first parameter)
   if (action.type === "anyOtherName") { value: state.value }
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+## 5
+
+## Using the React Context API
+
+- A more efficient way of passing data through components
+
+  ------------------------------------------ const anyName = React.createContext({ defaultData })
+  To create te function
+  Implemented in => "./store/auth-context.js"
+
+  ------------------------------------------ <anyName.Provider value:{{ Data }}> </anyName.Provider>
+  To provide data to all Child components inside (value will be accessible to all child elements)
+  Implemented in => "App.js"
+
+  ------------------------------------------ <anyName.Consumer> {(ctx) => {JSX}} </anyName.Consumer>
+  Consuming data/value passes to "provider" (All JSX need to be wrapped inside the function)
+  "ctx" => contains all data passed in the "provider". Ex => (ctx.Data)
+  Implemented in => "Navigation.js"
