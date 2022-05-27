@@ -1,5 +1,10 @@
-#1
-Using the useEffect() Hook
+## 1
+
+## Using the useEffect() Hook
+
+- useEffect() => runs every time at the end of the event cicle
+
+- Adding [Empthy] => will make it run only once (the first cicle)
 
 - Implemented in => "App.js"
 
@@ -16,17 +21,56 @@ keyValue => A string containing the value you want to give the key you are creat
 ------------------------------------- localStorage.removeItem('keyName')
 
 /////////////////////////////////////////////////////////////////////////////////////////////
-#2
-useEffect & Dependencies
+
+## 2
+
+## useEffect & Dependencies
 
 - Implemented in => "Login.js"
 
 /////////////////////////////////////////////////////////////////////////////////////////////
-#3
-Using the useEffect() Cleanup Function
+
+## 3
+
+## Using the useEffect() Cleanup Function
 
 - Implemented in => "Login.js"
 
-returning another function in useEffect()
-------------------------------------- useEffect(() => { return () => {} })
-To reduce HTTP request sent
+* returning another function in useEffect()
+  ------------------------------------- useEffect(() => { return () => {} })
+  To reduce HTTP request sent
+
+* returning another function in useEffect() with [Empthy] dependencies
+  The Return will run after the component is removed from the DOM
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+## 4
+
+## Using useReducer() Hook
+
+- Alternative way to "useState"
+  Is like using multiple useState in one
+
+* For managing complex states where one state rely on the value of another
+
+--------------------------------------- import {useReducer} from 'react'
+
+--------------------------------------- const [state, dispatch] = useReducer(function, { value: , isValid: })
+
+- Implemented in => "Login.js"
+
+  1). Create useReducer
+  const [state, dispatch] = useReducer(function, { value: , isValid: })
+
+  2). Create function inside Reducer
+  const function = (state, action) => { return value: '', isValid: }
+
+  3). Use [dispatch] function in other handlerFunctions to manipulate "action" values in the "Reducer Function"
+  dispatch( type: 'anyName', val: event.target.value )
+
+  4). "Reducer Funtion" will have access to data pass into [dispatch] (stored in the "action" second parameter)
+  if (action.type === "anyName") { value: action.val } => (value from "#3")
+
+  5). "Reducer Funtion" also have access to previous data before was changes (stored in the "state" first parameter)
+  if (action.type === "anyOtherName") { value: state.value }
