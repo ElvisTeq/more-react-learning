@@ -1,0 +1,18 @@
+#1
+Using the useEffect() Hook
+
+- Implemented in => "App.js"
+
+------------------------------------- useEffect(function, [dependencies])
+Tells React that your component needs to do something after render.
+[dependencies] => To make it re-run based on any giving dependencie
+
+------------------------------------- localStorage.setItem('keyName', 'keyValue')
+keyName => A string containing the name of the key you want to create/update.
+keyValue => A string containing the value you want to give the key you are creating/updating.
+
+------------------------------------- localStorage.getItem('keyName')
+
+------------------------------------- localStorage.removeItem('keyName')
+
+/////////////////////////////////////////////////////////////////////////////////////////////
