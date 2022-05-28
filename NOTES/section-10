@@ -107,3 +107,30 @@ keyValue => A string containing the value you want to give the key you are creat
 -------------------------------------------- const ctx = useContext(ContextFunction)
 "ctx" => Contains all data
 Implemented in => "Navigation.js"
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+## 7
+
+## Making Context Dynamic
+
+- We can also store functions into the Context function, and simply use them with (ctx.functionName)
+
+--------------------------------------------- <AuthContext.Provider value={{onLogout: logoutHandler}}> </AuthContext.Provider>
+All child element will have access to the function
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+## 8
+
+## Building & Using a Custom Context Provider Component
+
+- Refactored all Code using "ctx"
+
+- Tip For using Context function
+
+* Adding a dummy copy of the name of the Data, so React and VSCode will recognize when autocompleting
+
+* Components that all other components may need, should be use using Context function
+  Ex => in "App.js" all authentication code was moved to "auth-context.js"
+  Then => we wrapped that <Component><App.js /></Component> so everything inside has access to "ctx"
