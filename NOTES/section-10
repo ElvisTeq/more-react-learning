@@ -134,3 +134,39 @@ All child element will have access to the function
 * Components that all other components may need, should be use using Context function
   Ex => in "App.js" all authentication code was moved to "auth-context.js"
   Then => we wrapped that <Component><App.js /></Component> so everything inside has access to "ctx"
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+## 9
+
+## Rules of Hooks
+
+- Only call react hooks inside a react function (function that returns JSX)
+
+- Call react hook at the top Level inside the react function (not inside another function of the react function)
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+## 10
+
+- Created => "Input.js"
+  Refactored => "form" from the JSX
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+## 11
+
+## Forwad Refs
+
+Implemented in => "input.js" and "Login.js"
+
+------------------------------------------- element.focus()
+To focus/target the element
+
+------------------------------------------- React.forwardRef((props, ref) => {} return "JSX"
+Everything is inside this function including JSX returned
+By passing "ref" into the Component function, the other componen has access to "useImperativeHandle" data
+
+------------------------------------------- useImperativeHandle(ref, () => { anyThing })
+{ current.anyThing } => can be access from the other components because we added "ref" in the function
+Has to be inside ".forwardRef"
